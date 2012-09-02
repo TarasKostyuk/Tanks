@@ -19,10 +19,16 @@ namespace TanksGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private GameScreen _gameScreen;
+
         public Tanks()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 504;
+            graphics.PreferredBackBufferWidth = 468;
             Content.RootDirectory = "Content";
+
+            _gameScreen = new GameScreen(this, new MapReaderMock(), new ContentReader(Content));
         }
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace TanksGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            _gameScreen.LoadContent();
 
             // TODO: use this.Content to load your game content here
         }
@@ -71,7 +78,7 @@ namespace TanksGame
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            _gameScreen.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -84,7 +91,9 @@ namespace TanksGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            _gameScreen.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

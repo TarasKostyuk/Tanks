@@ -8,3 +8,5 @@ TestResults
 *.suo
 
 *Resharper*
+
+*.user
