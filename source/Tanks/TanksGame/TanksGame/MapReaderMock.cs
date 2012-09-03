@@ -16,16 +16,12 @@ namespace TanksGame
                 {
                     new MapItem
                     {
-                        Height = 2,
-                        Width = 2,
                         X = 5,
                         Y = 5,
                         ItemType = MapItemType.Head
                     },
                     new MapItem
                     {
-                        Height = 5,
-                        Width = 6,
                         X = 5,
                         Y = 5,
                         ItemType = MapItemType.Head

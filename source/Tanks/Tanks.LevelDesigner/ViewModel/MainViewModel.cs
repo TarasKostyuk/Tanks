@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Windows;
 using System.Windows.Input;
 using System.Xml;
 using GalaSoft.MvvmLight;
@@ -83,10 +84,11 @@ namespace Tanks.LevelDesigner.ViewModel
             };
             if (saveFile.ShowDialog() == true)
             {
+                bool minimize = MessageBox.Show("Minimize output file?", string.Empty, MessageBoxButton.YesNo) == MessageBoxResult.Yes;
                 DataContractSerializer serializer = new DataContractSerializer(typeof(Map));
-                //var settings = new XmlWriterSettings { Indent = true };
+                var settings = new XmlWriterSettings { Indent = !minimize };
 
-                using (var w = XmlWriter.Create(saveFile.FileName))//, settings))
+                using (var w = XmlWriter.Create(saveFile.FileName, settings))
                     serializer.WriteObject(w, Map);
             }
         }
