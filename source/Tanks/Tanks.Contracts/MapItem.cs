@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Tanks.Contracts
 {
-    [DataContract]
+    [DataContract(Name = "MI", Namespace = "")]
     public class MapItem
     {
         [DataMember]
@@ -23,21 +19,7 @@ namespace Tanks.Contracts
             set;
         }
 
-        [DataMember]
-        public int Width
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
-        public int Height
-        {
-            get;
-            set;
-        }
-
-        [DataMember]
+        [DataMember(Name = "IT")]
         public MapItemType ItemType
         {
             get;

@@ -1,8 +1,34 @@
 ﻿<Window x:Class="Tanks.LevelDesigner.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:LevelDesigner="clr-namespace:Tanks.LevelDesigner"
+        Title="MainWindow" Height="530" Width="650"
+        DataContext="{Binding Source={StaticResource ResourceKey=Locator}, Path=Main}">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open map" Command="{Binding OpenCommand}"/>
+                <MenuItem Header="Save map" Command="{Binding SaveCommand}"/>
+                <MenuItem Header="Close"/>
+            </MenuItem>
+        </Menu>
+        <DockPanel DockPanel.Dock="Left" MinWidth="150">
+            <ScrollViewer VerticalAlignment="Stretch">
+                <ListView ItemsSource="{Binding MapItemTypes}" SelectedItem="{Binding SelectedMapItem, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="2" BorderBrush="Black" Margin="8">
+                                <Image Source="{Binding Value}" Width="120">
+                                    <Image.ToolTip>
+                                        <TextBlock Text="{Binding Key}"/>        
+                                    </Image.ToolTip>
+                                </Image>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </DockPanel>
+        <LevelDesigner:MapEditorControl x:Name="MapEditor" MapClicked="MapClickedHandler" Map="{Binding Map}">
+        </LevelDesigner:MapEditorControl>
+    </DockPanel>
 </Window>

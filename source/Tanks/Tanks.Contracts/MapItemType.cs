@@ -8,6 +8,7 @@ namespace Tanks.Contracts
     [Serializable]
     public enum MapItemType
     {
+        Empty,
         Brick,
         Head,
         Ice,

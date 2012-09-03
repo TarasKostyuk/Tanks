@@ -16,7 +16,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{84AF8F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanks.LevelDesigner.Tests", "Tanks.LevelDesigner.Tests\Tanks.LevelDesigner.Tests.csproj", "{D0A5D8C4-E9DF-4289-A094-09244181EB8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07C7C3D5-53D4-4C19-A113-C09B773CBB65}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Tanks.vsmdi = Tanks.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Tanks.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -62,6 +74,16 @@ Global
 		{4EE11C5A-D628-4C77-90E3-9224D156F66D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4EE11C5A-D628-4C77-90E3-9224D156F66D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4EE11C5A-D628-4C77-90E3-9224D156F66D}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D0A5D8C4-E9DF-4289-A094-09244181EB8D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
